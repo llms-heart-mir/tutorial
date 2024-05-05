@@ -12,7 +12,7 @@ LLMs seem powerful, but that may not be a strong reason to commit to them.
 But I believe LLMs are here to stay for good reasons.
 This book is my invitation to the field and the ideas, hope you like it.   
 
-## Scope
+## The Scope
 
 This book is written in the perspective of music AI.
 

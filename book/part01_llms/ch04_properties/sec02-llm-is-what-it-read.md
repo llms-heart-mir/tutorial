@@ -1,10 +1,10 @@
-# A LLM is what it read
+# A LLM is What It Read
 
 Yes, we still argue large data vs. clean data. Of course the answer is large and clean data. This applies to LLMs. But how exactly?
 
 It's always related to the next-token prediction.
 
-## Normal data
+## Normal Data
 
 Let's take the sentences above as an example of normal, typical data.
 It's okay to use this to train a LLM, because it is fine and would be useful to learn predict next tokens from this sequence. 
@@ -12,7 +12,7 @@ It's okay to use this to train a LLM, because it is fine and would be useful to 
 > Yes, we still argue large data vs. clean data. Of course the answer is large and clean data. This applies to LLMs. But how exactly?
 
 
-## Dirty data for next-token prediction
+## Dirty Data for Next-token Prediction
 
 This is a randomly shuffled word sequence. 
 
@@ -26,7 +26,7 @@ It is not only difficult but also useless to learn to predict the next tokens fr
 
 These are not any language; Again, it'd be a waste to train LLMs with this sequence. 
 
-## Banal data for next-token prediction
+## Banal Data for Next-token Prediction
 
 > Good morning! How are you today?<br>
 > Hi, how is everything going on? Hope you are doing well.<br>
@@ -35,7 +35,7 @@ These are not any language; Again, it'd be a waste to train LLMs with this seque
 
 These kinds of sentences are too common that after a bit of training, a LLM would be able to perform the next-token prediction pretty well, too well, well enough that seeing these sentences once more wouldn't make the LLM any stronger.
 
-## High-quality data
+## High-quality Data
 
 So what is high-quality data? It depends on what you want, but you'd want to make sure your LLM is trained to predict all the rare, domain-specific, and important tokens in the right context. 
 

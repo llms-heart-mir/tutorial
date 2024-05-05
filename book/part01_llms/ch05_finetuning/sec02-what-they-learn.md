@@ -1,6 +1,6 @@
-# What LLMs learn during finetuning
+# What LLMs Learn during Finetuning
 
-## Learn to follow the format
+## Learn to Follow the Format
 
 During finetuning, language models learn to follow the **desired format** for their outputs. In the context of a conversational interface like ChatGPT or Claude, the model is trained to output responses that follow the structure of a back-and-forth dialogue between a user and a system.
 
@@ -39,7 +39,7 @@ For instance, the model might generate an explanation like:
 
 By recognizing the analogous structure and adapting the learned patterns, the language model can provide coherent and informative explanations even for concepts it has not encountered directly during finetuning.
 
-## Analogy may not generalize
+## Analogy May Not Generalize
 
 It's important to recognize that this generalization-by-analogy has limitations. The effectiveness of analogical reasoning depends on the similarities between the domains and the consistency of word relationships across those domains.
 

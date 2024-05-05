@@ -1,4 +1,4 @@
-# LLMs are zero-shot learners
+# LLMs are Zero-shot Learners
 
 The zero-shot ability of LLMs shocked people when ChatGPT was released in late 2022. 
 ChatGPT is the most popular and successful example of instruction-finetuned LLMs. Based on its vast range of understanding in words and sentences, it responds to users' questions really well.

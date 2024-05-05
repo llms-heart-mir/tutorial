@@ -22,7 +22,7 @@ Compare this to word-based tokenizers.
 
 Indeed, GPT-4 uses their tokenizer named `cl100k_base`, whose vocab size is only 100k but can represent a lot of words than possibly a 1M-vocab word-based tokenizer. 
 
-## Training sub-word tokenizers
+## Training Sub-word Tokenizers
 
 is omitted in this book :p It's called "Byte-Pair Encoding" tokenizers, go study yourself! 
 
