@@ -24,7 +24,7 @@ Please visit [the web book](https://llms-heart-mir.github.io/tutorial) to read i
     Author = {Choi, Keunwoo},
     Month = May.,
     Publisher = {Keunwoo Choi},
-    Title = {LLMs heart MIR},
+    Title = {LLMs heart MIR: A tutorial on Large Language Models and Music Information Retrieval},
     Year = 2024,
     Url = {https://llms-heart-mir.github.io/tutorial},
 }
