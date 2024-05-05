@@ -4,6 +4,11 @@ If vibe checks are a bit too subjective for your taste; LM Arena is to slow and 
 
 The idea is simple: present the language model with a question and a set of multiple-choice answer options, and see if it can select the correct answer. This is typically done by having the model generate text completions for each answer option, and then selecting the option with the highest probability according to the model's own scoring.
 
+```{admonition} Multiple Choice QA
+Multiple Choice QA is to provide a set of a question and choices to a LLM as a prompt and measure if the LLM would generate the correct answer.    
+```
+
+
 So why is multiple-choice QA so popular for evaluation? A few reasons:
 
 1. **Simplicity**: It's straightforward to set up and run – just need a dataset of questions and answers.
