@@ -12,7 +12,7 @@ LLMs seem powerful, but that may not be a strong reason to commit to them.
 But I believe LLMs are here to stay for good reasons.
 This book is my invitation to the field and the ideas, hope you like it.   
 
-Please visit [the web book](https://llms-heart-mir.github.io/tutorial) to read it!
+Please visit [the web book](https://llms-heart-mir.github.io/tutorial) to read it.
 
 
 ## How to cite
