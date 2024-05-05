@@ -14,11 +14,13 @@ This book is my invitation to the field and the ideas, hope you like it.
 
 ## Scope
 
-This book is written in the perspective of music AI. 
+This book is written in the perspective of music AI.
 
-The intro (Chapter 1) would be general and succinct. I'll outsource a lot by simply sharing links so that you decide the depth and breadth of your study.
-
-As a music AI person, you'll find the later chapters more interesting. 
+1. Chapter 1, "Large Language Models", would be general and succinct. I'll outsource a lot by simply sharing links so that you decide the depth and breadth of your study.
+2. Chapter 2, "LLM as a Tool with Common Sense" is where I introduce some existing works and my suggestions on how to use LLMs for MIR research. 
+3. Chapter 3, "Multimodal LLMs", provides a summary about how we can incorporate multimodal data into LLMs.
+4. Chapter 4, "Weakness of LLMs for MIR", presents some limitations the current LLMs have in the context of MIR research.
+5. Chapter 5, "Finale", is just a single page of my parting words.
 
 Ok, then..
 
