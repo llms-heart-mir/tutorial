@@ -10,7 +10,7 @@ A language model is a model that learns patterns from language data.
 Remember this definition does not imply any virtues we may want from language models, i.e., factual, responsible, or explainable. 
 
 Ok, so - what is a large language model? 
-Defining LLM is as impossible as defining jazz music 😉 Let me fail in this way:
+Defining LLM is as impossible as defining jazz music 😉 (ok perhaps a bit easier.) Let me fail in this way:
 
 ```{admonition} Large Language Model
 A large language model is language models that are large enough, usually with more than a billion parameters, to demonstrate zero-shot and few-shot abilities. 

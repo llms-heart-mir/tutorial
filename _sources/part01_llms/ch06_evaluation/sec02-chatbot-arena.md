@@ -1,8 +1,12 @@
 # Chatbot Arena
 
-Chatbot Arena is a crowdsourced version of the vibe check; or an open AB testing platform for LLMs.
+[Chatbot Arena](https://chat.lmsys.org/) is a crowdsourced version of the vibe check; or an open AB testing platform for LLMs.
 
 The premise is simple: let the public interact with your language model, and collect their ratings and feedback in real-time.
+
+```{admonition} Chatbot Arena
+The ahatbot arena is a website for a crowdsourced vibe check by blindtesting LLMs.    
+```
 
 Here's how it typically works:
 

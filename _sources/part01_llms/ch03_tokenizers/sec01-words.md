@@ -1,6 +1,6 @@
-# Word as a token (Pre-LLM era)
+# Word as a Token (Pre-LLM era)
 
-## Word-based tokenization
+## Word-based Tokenization
 
 Take this sentence as an example:
 

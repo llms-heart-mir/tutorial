@@ -1,4 +1,4 @@
-# "Traditional" language models and tasks
+# "Traditional" Language Models and Tasks
 
 Let me outrageously define Traditional LMs as *any language models before the LLMs*. 
 
