@@ -1,0 +1,67 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: I. Large Language Models
+    numbered: true
+    chapters:
+      - file: part01_llms/ch01_basics/sec00-intro
+        sections:
+        - file: part01_llms/ch01_basics/sec01-overview
+        - file: part01_llms/ch01_basics/sec02-trad-lms
+        - file: part01_llms/ch01_basics/sec03-word2vec-bert
+      - file: part01_llms/ch02_architectures/sec00-intro
+        sections:
+        - file: part01_llms/ch02_architectures/sec01-transformer
+        - file: part01_llms/ch02_architectures/sec02-models.md
+      - file: part01_llms/ch03_tokenizers/sec00-intro
+        sections:
+        - file: part01_llms/ch03_tokenizers/sec01-words
+        - file: part01_llms/ch03_tokenizers/sec02-subwords
+      - file: part01_llms/ch04_properties/sec00-intro
+        sections:
+          - file: part01_llms/ch04_properties/sec01-training-objective
+          - file: part01_llms/ch04_properties/sec02-llm-is-what-it-read
+      - file: part01_llms/ch05_finetuning/sec00-intro
+        sections:
+          - file: part01_llms/ch05_finetuning/sec01-what-is
+          - file: part01_llms/ch05_finetuning/sec02-what-they-learn
+      - file: part01_llms/ch06_evaluation/sec00-intro
+        sections:
+          - file: part01_llms/ch06_evaluation/sec01-vibe-check
+          - file: part01_llms/ch06_evaluation/sec02-chatbot-arena
+          - file: part01_llms/ch06_evaluation/sec03-multiple-choice-qa
+
+  - caption: II. LLM as a Tool with Common Sense
+    numbered: true
+    chapters:
+      - file: part02_llm-as-a-tool/sec00-llm-zero-shot-learner
+      - file: part02_llm-as-a-tool/sec01-dataset
+      - file: part02_llm-as-a-tool/sec02-lyric-analysis
+      - file: part02_llm-as-a-tool/sec03-music-recommendation
+      - file: part02_llm-as-a-tool/sec04-music-composition-assistance
+
+  - caption: III. Multimodal LLMs
+    numbered: true
+    chapters:
+      - file: part04_multimodal/sec00-multimodal
+      - file: part04_multimodal/sec01-multimodal-input
+      - file: part04_multimodal/sec02-music-audio-llms
+
+  - caption: IV. Weakness of LLMs for MIR
+    numbered: true
+    chapters:
+      - file: part05_weakness/sec00-weakness
+      - file: part05_weakness/sec01-llms-cannot-rhyme
+      - file: part05_weakness/sec02-llms-dont-know-every-artist
+
+  - caption: V. Finale
+    numbered: true
+    chapters:
+      - file: part06_finale/sec00-finale
+
+  - caption: Resources
+    chapters:
+      - file: references.md
