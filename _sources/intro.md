@@ -39,7 +39,7 @@ Let's go 🥁
 
 ## How to cite
 
-```
+```bibtex
 @book{llms-heart-mir,
     Author = {Choi, Keunwoo},
     Month = May.,
