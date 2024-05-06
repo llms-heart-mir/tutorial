@@ -19,7 +19,7 @@ Please visit [the web book](https://llms-heart-mir.github.io/tutorial) to read i
 
 ## How to cite
 
-```
+```bibtex
 @book{llms-heart-mir,
     Author = {Choi, Keunwoo},
     Month = May.,
