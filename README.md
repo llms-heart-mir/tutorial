@@ -1,6 +1,6 @@
 # LLMs heart MIR
 
-A tutorial on Large Language Models and Music Information Retrieval.
+A tutorial on Large Language Models for Music Information Retrieval.
 
 By [Keunwoo Choi](https://keunwoochoi.github.io/), 2024
 
@@ -24,7 +24,7 @@ Please visit [the web book](https://llms-heart-mir.github.io/tutorial) to read i
     Author = {Choi, Keunwoo},
     Month = May.,
     Publisher = {Keunwoo Choi},
-    Title = {LLMs heart MIR: A tutorial on Large Language Models and Music Information Retrieval},
+    Title = {LLMs heart MIR: A tutorial on Large Language Models for Music Information Retrieval},
     Year = 2024,
     Url = {https://llms-heart-mir.github.io/tutorial},
 }

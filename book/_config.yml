@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: "Tutorial: Large Language Models and Music Information Retrieval (LLMs <3 MIR)"
+title: "A Tutorial on Large Language Models for Music Information Retrieval (LLMs <3 MIR)"
 author: "Keunwoo Choi"
 logo: logo.png
 
