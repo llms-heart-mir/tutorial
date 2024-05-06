@@ -1,6 +1,6 @@
 # LLMs <3 MIR
 
-A tutorial on Large Language Models and Music Information Retrieval.
+A tutorial on Large Language Models for Music Information Retrieval.
 
 By [Keunwoo Choi](https://keunwoochoi.github.io/), 2024
 
