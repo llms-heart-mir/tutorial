@@ -43,7 +43,6 @@ Let's go 🥁
 @book{llms-heart-mir,
     Author = {Choi, Keunwoo},
     Month = May.,
-    Publisher = {Keunwoo Choi},
     Title = {LLMs heart MIR: A tutorial on Large Language Models for Music Information Retrieval},
     Year = 2024,
     Url = {https://llms-heart-mir.github.io/tutorial},
