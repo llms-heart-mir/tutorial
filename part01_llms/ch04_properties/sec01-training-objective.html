@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -76,7 +76,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.2. A LLM is What It Read" href="sec02-llm-is-what-it-read.html" />
+    <link rel="next" title="4.2. A LLM is What It Reads" href="sec02-llm-is-what-it-read.html" />
     <link rel="prev" title="4. Pre-Training, and the Induced Properties" href="sec00-intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -212,7 +212,7 @@
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -473,8 +473,8 @@ document.write(`
 <p>Earlier in this book, we learned BERTs are trained with masked token prediction.</p>
 <p><img alt="bert" src="../../_images/bert-training.png" />
 (<a class="reference external" href="https://www.turing.com/kb/how-bert-nlp-optimization-model-works">image credit</a>)</p>
-<p>Training LLMs is quite different. Pretty much all the current LLMs are trained with “<strong>next-token prediction</strong>”. This is related to why we call LLMs “<em>decoder-only transformers</em>”; also to “auto-regressive models”.</p>
-<p>Let’s say one of our training document has this token sequence:</p>
+<p>Training LLMs is quite different. Pretty much all the current LLMs are trained with “<strong>next-token prediction</strong>”. This is related to why we call LLMs “<em>decoder-only transformers</em>”, or “auto-regressive models”.</p>
+<p>Let’s say one of our training documents has this token sequence:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">/</span> <span class="s1">&#39;m / instant / iating / a / tokenizer / for / my / L/ LM / s</span>
 </pre></div>
 </div>
@@ -483,7 +483,7 @@ document.write(`
 </pre></div>
 </div>
 <p>In fact, it only shows a slice of the training.
-Usually, the prediction, loss calculation, and backpropagation is configured so that in a single batch at a step, once we have a sequence as a training item length of <span class="math notranslate nohighlight">\(N + 1\)</span>, we perform this to every token except the first one.
+Usually, the prediction, loss calculation, and backpropagation are configured so that in a single batch at a step, once we have a sequence as a training item length of <span class="math notranslate nohighlight">\(N + 1\)</span>, we perform this to every token except the first one.
 (This is also called “teacher forcing” autoregressive training.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I &quot;</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="n">LLM</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="s2">&quot;&#39;m&quot;</span>
 <span class="s2">&quot;I / &#39;m&quot;</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="n">LLM</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="s2">&quot;instant&quot;</span>
@@ -565,7 +565,7 @@ Usually, the prediction, loss calculation, and backpropagation is configured so 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>A LLM is What It Read</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>A LLM is What It Reads</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

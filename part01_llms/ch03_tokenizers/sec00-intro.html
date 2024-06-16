@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -456,10 +456,10 @@ document.write(`
 <p class="admonition-title">Language Model</p>
 <p>A token is the smallest meaningful unit of text for a language model.</p>
 </div>
-<p>When you’re mostly finetuning and using provided LLMs, it’s easy to overlook the importance of understanding tokenizers, as you merely use it as given while making small changes to the model.</p>
-<p>I beg to change the view. Tokenization is the very first step of text processing in LLMs. The current tokenization works pretty well, at least much better than the previous method in the pre-LLM era. At the same time, many of the properties and limitations of LLMs come from the tokenization step.</p>
-<p>Therefore, to understand LLMs, it is absolutely necessary to understand tokenizers - its mechanism, its training procedure, why the current tokenizers work in such a way, its pros and cons, etc.</p>
-<p>I’ll be quick. Watch Andrej Karpathy’s <a class="reference external" href="https://www.youtube.com/watch?v=zduSFxRajkE">1-hr tutorial video on tokenizer</a> if you want a deeper dive.</p>
+<p>When you’re mostly finetuning and using provided LLMs, it’s easy to overlook the importance of understanding tokenizers, as you merely use them as given while making small changes to the model.</p>
+<p>I beg to change this view. Tokenization is the very first step of text processing in LLMs. The current tokenization works pretty well, at least much better than the previous methods in the pre-LLM era. At the same time, many of the properties and limitations of LLMs come from the tokenization step.</p>
+<p>Therefore, to understand LLMs, it is absolutely necessary to understand tokenizers - their mechanism, their training procedure, why the current tokenizers work in such a way, their pros and cons, etc.</p>
+<p>I’ll be brief. Watch Andrej Karpathy’s <a class="reference external" href="https://www.youtube.com/watch?v=zduSFxRajkE">1-hr tutorial video on tokenizers</a> if you want a deeper dive.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>

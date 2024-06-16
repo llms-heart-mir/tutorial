@@ -16,7 +16,7 @@ There are almost nothing else but many **self-attention** layers in a Transforme
 | nn.Linear -> nn.Softmax (lm_head) | (batch, sequence, emb_dim)                 | (batch, sequence, n_token=50_000)     |
 
 
-There are other ways for using self-attention layers. However, the recent LLMs are all alike. They are also called *decode-only transformers*.
+There are other ways for using self-attention layers. However, the recent LLMs are all alike; They are also called *decode-only transformers*.
 
 ## Token embedding
 
@@ -25,7 +25,7 @@ It is a simple embedding layer, i.e., a trainable look-up table mapping `token_i
 ## Self-attention
 
 The strength of the Transformer comes from its unique self-attention mechanism. 
-Since I'm not better than Andrej Karpathy at teaching, I'll send you to [his lecture video on GPT, 42:15](https://youtu.be/kCc8FmEb1nY?si=cBCRZAp5BWg5wirN&t=2535). 
+Since I'm not better than Andrej Karpathy at teaching, I'll send you to [his lecture video on GPT, 42:15](https://youtu.be/kCc8FmEb1nY?si=cBCRZAp5BWg5wirN&t=2535) for more details. 
 
 Here's my very lossy tl;dr:
  - A self-attention layer maps a sequence of vector to another sequence of vector.

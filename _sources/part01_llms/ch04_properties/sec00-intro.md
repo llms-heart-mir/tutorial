@@ -9,6 +9,6 @@ Repeat this many, many times:
 
 But the detail varies by domains and tasks; and LLMs have their own training recipe. It is highly scalable and efficient - I can say. But in terms of what? We'll cover this soon.
 
-The training configuration i.e., what to predict and how to measure loss, determines some important properties of LLMs. We'll cover this as well in this chapter.
+The training configuration i.e., what to predict and how to measure the loss, determines some important properties of LLMs. We'll cover this as well in this chapter.
 
 Ready? Let's go 🛢

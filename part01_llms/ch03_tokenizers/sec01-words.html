@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -520,19 +520,19 @@ I.e., How can we decide <strong>the smallest meaningful unit</strong> of this te
 </tr>
 </tbody>
 </table>
-<p>The problem is, in the real use-cases, a language model would need to process other sentences consists of other words, too. This means, to perfectly represent every word in the embedding layer, we need a very large embedding layers.</p>
-<p>Well, How many?</p>
-<p>Let’s say our target corpus is Wikipedia. According to <a class="reference external" href="https://github.com/IlyaSemenov/wikipedia-word-frequency">this repo</a>:</p>
+<p>The problem is, in real use-cases, a language model would need to process sentences consisting of words other than those in the training data. This means, to perfectly represent every word in the embedding layer, we need a very large embedding layer.</p>
+<p>Well, how large?</p>
+<p>Let’s say our target corpus is Wikipedia. According to <a class="reference external" href="https://github.com/IlyaSemenov/wikipedia-word-frequency">this repository</a>:</p>
 <blockquote>
 <div><p>Total unique words appearing at least in 3 articles: 2747823</p>
 </div></blockquote>
-<p>There are whooping unique 2.7M words in English only, as of 2022.</p>
+<p>There are a whopping 2.7M unique words in English only, as of 2022.</p>
 </section>
 <section id="pros">
 <h2><span class="section-number">3.1.2. </span>Pros<a class="headerlink" href="#pros" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Different words convey different meanings. So it makes sense to treat it as a minimum unit.</p></li>
-<li><p>Perhaps not too different from how humans process natural languages.. perhaps.</p></li>
+<li><p>Different words convey different meanings. So it makes sense to treat them as the minimum unit.</p></li>
+<li><p>Perhaps not too different from how humans process natural languages… perhaps.</p></li>
 <li><p>Zero effort to train the tokenizer.</p></li>
 </ul>
 </section>
@@ -541,17 +541,17 @@ I.e., How can we decide <strong>the smallest meaningful unit</strong> of this te
 <ul class="simple">
 <li><p>Huge vocabulary size leads to increased model complexity and memory requirements.</p>
 <ul>
-<li><p>3M vocab x 4096 dim = over 12B parameters = over 49GB if float32 is used. This embedding layer is already too big for most of the GPUs!</p></li>
+<li><p>3M vocab x 4096 dim = over 12B parameters = over 49GB if float32 is used. This embedding layer is already too big for most GPUs!</p></li>
 </ul>
 </li>
 <li><p>Inability to handle out-of-vocabulary (OOV) words, which are common in real-world text data.</p>
 <ul>
-<li><p>Due to the memory issue, it’s common to use most popular words under 1M or so. This means, due to the long tail distribution of words, OOV would occur often.</p></li>
+<li><p>Due to the memory issue, it’s common to use the most popular words under 1M or so. This means, due to the long-tailed distribution of words, OOV would occur often.</p></li>
 </ul>
 </li>
 <li><p>Lack of subword information, which can be useful for understanding morphological patterns and handling rare or unseen words.</p>
 <ul>
-<li><p>E.g., it’d be better if <code class="docutils literal notranslate"><span class="pre">instantiating</span></code> can be split into <code class="docutils literal notranslate"><span class="pre">instantiat-</span></code> + <code class="docutils literal notranslate"><span class="pre">-ing</span></code>. Perhaps <code class="docutils literal notranslate"><span class="pre">LLMs</span></code> into <code class="docutils literal notranslate"><span class="pre">LLM</span></code> + <code class="docutils literal notranslate"><span class="pre">s</span></code>. <code class="docutils literal notranslate"><span class="pre">permutation</span></code> into <code class="docutils literal notranslate"><span class="pre">permute</span></code> + <code class="docutils literal notranslate"><span class="pre">-ate</span></code> + <code class="docutils literal notranslate"><span class="pre">-tion</span></code> or something. Something like that!</p></li>
+<li><p>E.g., it’d be better if <code class="docutils literal notranslate"><span class="pre">instantiating</span></code> can be split into <code class="docutils literal notranslate"><span class="pre">instantiat-</span></code> + <code class="docutils literal notranslate"><span class="pre">-ing</span></code>. Perhaps <code class="docutils literal notranslate"><span class="pre">LLMs</span></code> into <code class="docutils literal notranslate"><span class="pre">LLM</span></code> + <code class="docutils literal notranslate"><span class="pre">s</span></code>. <code class="docutils literal notranslate"><span class="pre">permutation</span></code> into <code class="docutils literal notranslate"><span class="pre">permute</span></code> + <code class="docutils literal notranslate"><span class="pre">-ate</span></code> + <code class="docutils literal notranslate"><span class="pre">-tion</span></code> or something similar.</p></li>
 </ul>
 </li>
 <li><p>Difficulty in handling misspellings, slang, or other non-standard language elements.</p></li>

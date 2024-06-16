@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-intro.html">5. Finetuning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -471,24 +471,24 @@ document.write(`
 <p class="admonition-title">Finetuning a LLM</p>
 <p>Finetuning a LLM is to continue training a LLM using additional, small but focused datasets.</p>
 </div>
-<p>As opposed to the pretraining stage where billions of documents are used, during the finetuning stage, we usually use a small set of documents, say, few thousands or perhaps hundreds of thousands.</p>
-<p>During the finetuning stage, we wouldn’t want to change the LLM weights drastically. That’s why we use a smaller learning rate, and parameter-efficient finetuning strategies such as LoRA <span id="id1">[<a class="reference internal" href="../../references.html#id11" title="Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: low-rank adaptation of large language models. 2021. arXiv:2106.09685.">HSW+21</a>]</span> works pretty well.</p>
+<p>As opposed to the pretraining stage where billions of documents are used, during the finetuning stage, we usually use a small set of documents, say, a few thousands or perhaps hundreds of thousands.</p>
+<p>During the finetuning stage, we wouldn’t want to change the LLM’s weights drastically. That’s why we use a smaller learning rate, and parameter-efficient finetuning strategies such as LoRA <span id="id1">[<a class="reference internal" href="../../references.html#id11" title="Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: low-rank adaptation of large language models. 2021. arXiv:2106.09685.">HSW+21</a>]</span> work pretty well.</p>
 </section>
 <section id="behavior-before-finetuning">
 <h2><span class="section-number">5.1.2. </span>Behavior Before Finetuning<a class="headerlink" href="#behavior-before-finetuning" title="Link to this heading">#</a></h2>
-<p>We perform finetuning when we want a LLM to behave somewhat differently from text completion of documents.</p>
+<p>We perform finetuning when we want an LLM to behave somewhat differently from text completion of documents.</p>
 <p>Even with finetuning, it’s still text completion. But the format and the content of the generated text can be steered during finetuning.</p>
-<p>For example, text completion mean just keep writing a document with a given prompt like this,</p>
+<p>For example, text completion means just keep writing a document with a given prompt like this:</p>
 <p><strong>User’s prompt:</strong></p>
 <blockquote>
 <div><p>What is music information retrieval?</p>
 </div></blockquote>
-<p>A LLM without finetuning would continue to complete a document like this. You may or may not like it.</p>
+<p>An LLM without finetuning would continue to complete a document like this. You may or may not like it.</p>
 <p><strong>User’s prompt + possible continuation 1 by LLM (not finetuned):</strong></p>
 <blockquote>
 <div><p>What is music information retrieval? It is defined as a research field where..</p>
 </div></blockquote>
-<p>Ok, it sounds reasonable, although you might want it to answer back to you.
+<p>Okay, it sounds reasonable, although you might want it to answer you back directly.
 However, due to the stochastic nature of LLM generation, it could get worse.</p>
 <p><strong>User’s prompt + possible continuation 2 by LLM (not finetuned):</strong></p>
 <blockquote>
@@ -499,7 +499,7 @@ However, due to the stochastic nature of LLM generation, it could get worse.</p>
 <blockquote>
 <div><p>What is music information retrieval? I don’t know ¯_(ツ)_/¯</p>
 </div></blockquote>
-<p>Now you get it – the goal of finetuning is <strong>to tame a LLM</strong> to steer how it continues to generate texts.</p>
+<p>Now you get it – the goal of finetuning is <strong>to tame an LLM</strong> to steer how it continues to generate texts.</p>
 <section id="behavior-after-finetuning">
 <h3><span class="section-number">5.1.2.1. </span>Behavior After Finetuning<a class="headerlink" href="#behavior-after-finetuning" title="Link to this heading">#</a></h3>
 <p>It magically follows your instruction! (Not really, but..)</p>

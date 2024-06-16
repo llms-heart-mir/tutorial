@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -450,7 +450,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embeddings">1.3.1. Word Embeddings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">1.3.2. Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-and-training-objectives">1.3.3. Models and Training Objectives</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">1.3.3.1. word2vec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">1.3.3.1. Word2Vec</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bert">1.3.3.2. BERT</a></li>
 </ul>
 </li>
@@ -471,7 +471,7 @@ document.write(`
 <p>The word2vec <span id="id1">[<a class="reference internal" href="../../references.html#id7" title="Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. Distributed representations of words and phrases and their compositionality. Advances in neural information processing systems, 2013.">MSC+13</a>]</span> and BERTs <span id="id2">[<a class="reference internal" href="../../references.html#id3" title="Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. Bert: pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805, 2018.">DCLT18</a>]</span> are crucial steps towards LLMs. Compared to the previous language models, they are generally applicable to various language tasks.</p>
 <section id="word-embeddings">
 <h2><span class="section-number">1.3.1. </span>Word Embeddings<a class="headerlink" href="#word-embeddings" title="Link to this heading">#</a></h2>
-<p>Word embeddings are dense vector representations of words that capture semantic and syntactic relationships between words. Typically, the size of word embeddings is 64 - 1024.</p>
+<p>Word embeddings are dense vector representations of words that capture semantic and syntactic relationships between words. Typically, the size of word embeddings is between 64 and 1024.</p>
 </section>
 <section id="data">
 <h2><span class="section-number">1.3.2. </span>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
@@ -489,10 +489,10 @@ document.write(`
 </section>
 <section id="models-and-training-objectives">
 <h2><span class="section-number">1.3.3. </span>Models and Training Objectives<a class="headerlink" href="#models-and-training-objectives" title="Link to this heading">#</a></h2>
-<p>Both word2vec and BERT are trained to fill missing parts from the input texts. This means the training scheme is <strong>self-supervised learning</strong>, and we do not need human annotation - which means we can use a large-scale dataset.</p>
+<p>Both Word2Vec and BERT are trained to fill missing parts from the input texts. This means the training scheme is <strong>self-supervised learning</strong>, and we do not need human annotation - which means we can use a large-scale dataset.</p>
 <section id="word2vec">
-<h3><span class="section-number">1.3.3.1. </span>word2vec<a class="headerlink" href="#word2vec" title="Link to this heading">#</a></h3>
-<p>The word2Vec model is very simple. It’s a shallow neural network trained by either one of the two objectives.</p>
+<h3><span class="section-number">1.3.3.1. </span>Word2Vec<a class="headerlink" href="#word2vec" title="Link to this heading">#</a></h3>
+<p>The Word2Vec model is very simple. It’s a shallow neural network trained by either one of the two objectives:</p>
 <ul class="simple">
 <li><p><strong>Continuous Bag-of-Words (CBOW)</strong>: Predicts the current word based on surrounding contexts.</p></li>
 <li><p><strong>Skip-gram</strong>: Predicts surrounding context words based on the current word.</p></li>
@@ -500,12 +500,12 @@ document.write(`
 </section>
 <section id="bert">
 <h3><span class="section-number">1.3.3.2. </span>BERT<a class="headerlink" href="#bert" title="Link to this heading">#</a></h3>
-<p>BERT is based on the Transformer architecture. It’s train with two objectives.</p>
+<p>BERT is based on the Transformer architecture. It’s trained with two objectives:</p>
 <ul class="simple">
 <li><p><strong>Masked Language Modeling (MLM)</strong>: Predicting randomly masked words based on context.</p></li>
 <li><p><strong>Next Sentence Prediction (NSP)</strong>: Determining if two sentences were consecutive or not.</p></li>
 </ul>
-<p>With MLM loss, BERT learns a pretty good word embedding. With NSP loss, BERT learns a nice sentence embedding.</p>
+<p>With the MLM loss, BERT learns a pretty good word embedding. With the NSP loss, BERT learns a nice sentence embedding.</p>
 <p><img alt="bert" src="../../_images/bert-training.png" />
 (<a class="reference external" href="https://www.turing.com/kb/how-bert-nlp-optimization-model-works">image credit</a>)</p>
 <p>In the image above, BERT has to predict what is the best word to be filled at the masked location. In my opinion, “they” wouldn’t be wrong, though “you” is perhaps more likely. And this opinion came from my English experience. BERT also needs to learn good word embeddings to perform the given task.</p>
@@ -513,9 +513,9 @@ document.write(`
 </section>
 <section id="why-important-pre-training-vs-finetuning">
 <h2><span class="section-number">1.3.4. </span>Why important? Pre-training vs. Finetuning<a class="headerlink" href="#why-important-pre-training-vs-finetuning" title="Link to this heading">#</a></h2>
-<p>Only with word2vec and BERTs, many NLP tasks started to have two separate training stages; <em>pre-training</em> and <em>finetuning</em>.</p>
-<p><strong>Pre-training</strong>: Training a general model such as word2vec and BERT is called pre-training. This should be done in a large scale in terms of data, so that the model has good representations of many words in various contexts. To do that, one needs enough hardware.</p>
-<p><strong>Finetuning</strong>: One can use the trained word embedding model to solve downstream tasks. Compared to the pre-training stage, it’s simple - so simple (or it may seem so) that we don’t even call it “training” - we call it “tuning” (obviously, it’s also training.)</p>
+<p>Only with Word2Vec and BERT, many NLP tasks started to have two separate training stages: <em>pre-training</em> and <em>finetuning</em>.</p>
+<p><strong>Pre-training</strong>: Training a general model such as Word2Vec and BERT is called pre-training. This should be done on a large scale in terms of data, so that the model has good representations of many words in various contexts. To do that, one needs enough hardware.</p>
+<p><strong>Finetuning</strong>: One can use the trained word embedding model to solve downstream tasks. Compared to the pre-training stage, it’s simple - so simple (or it may seem so) that we don’t even call it “training” - we call it “tuning” (obviously, it’s also training).</p>
 </section>
 </section>
 
@@ -586,7 +586,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#word-embeddings">1.3.1. Word Embeddings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">1.3.2. Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-and-training-objectives">1.3.3. Models and Training Objectives</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">1.3.3.1. word2vec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#word2vec">1.3.3.1. Word2Vec</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bert">1.3.3.2. BERT</a></li>
 </ul>
 </li>

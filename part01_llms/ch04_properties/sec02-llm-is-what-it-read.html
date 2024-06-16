@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4.2. A LLM is What It Read &#8212; A Tutorial on Large Language Models for Music Information Retrieval (LLMs &lt;3 MIR)</title>
+    <title>4.2. A LLM is What It Reads &#8212; A Tutorial on Large Language Models for Music Information Retrieval (LLMs &lt;3 MIR)</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -437,7 +437,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>A LLM is What It Read</h1>
+    <h1>A LLM is What It Reads</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -462,16 +462,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="a-llm-is-what-it-read">
-<h1><span class="section-number">4.2. </span>A LLM is What It Read<a class="headerlink" href="#a-llm-is-what-it-read" title="Link to this heading">#</a></h1>
-<p>Yes, we still argue large data vs. clean data. Of course the answer is large and clean data. This applies to LLMs. But how exactly?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-llm-is-what-it-reads">
+<h1><span class="section-number">4.2. </span>A LLM is What It Reads<a class="headerlink" href="#a-llm-is-what-it-reads" title="Link to this heading">#</a></h1>
+<p>Yes, we still argue large data vs. clean data. Of course, the answer is large and clean data. This applies to LLMs. But how exactly?</p>
 <p>It’s always related to the next-token prediction.</p>
 <section id="normal-data">
 <h2><span class="section-number">4.2.1. </span>Normal Data<a class="headerlink" href="#normal-data" title="Link to this heading">#</a></h2>
 <p>Let’s take the sentences above as an example of normal, typical data.
-It’s okay to use this to train a LLM, because it is fine and would be useful to learn predict next tokens from this sequence.</p>
+It’s okay to use this to train an LLM, because it is fine and would be useful to learn to predict the next tokens from this sequence.</p>
 <blockquote>
-<div><p>Yes, we still argue large data vs. clean data. Of course the answer is large and clean data. This applies to LLMs. But how exactly?</p>
+<div><p>Yes, we still argue large data vs. clean data. Of course, the answer is large and clean data. This applies to LLMs. But how exactly?</p>
 </div></blockquote>
 </section>
 <section id="dirty-data-for-next-token-prediction">
@@ -487,7 +487,7 @@ It’s okay to use this to train a LLM, because it is fine and would be useful t
 <blockquote>
 <div><p>가ffdj 나ㅏㅏㅏㅏqvbblf rdp d e r 3 3 r fd %</p>
 </div></blockquote>
-<p>These are not any language; Again, it’d be a waste to train LLMs with this sequence.</p>
+<p>These are not any language; again, it’d be a waste to train LLMs with this sequence.</p>
 </section>
 <section id="banal-data-for-next-token-prediction">
 <h2><span class="section-number">4.2.3. </span>Banal Data for Next-token Prediction<a class="headerlink" href="#banal-data-for-next-token-prediction" title="Link to this heading">#</a></h2>
@@ -497,7 +497,7 @@ Hi, how is everything going on? Hope you are doing well.<br>
 Hello, there! I was wondering if..<br>
 Hi! How was your weekend?<br></p>
 </div></blockquote>
-<p>These kinds of sentences are too common that after a bit of training, a LLM would be able to perform the next-token prediction pretty well, too well, well enough that seeing these sentences once more wouldn’t make the LLM any stronger.</p>
+<p>These kinds of sentences are too common, such that after a bit of training, an LLM would be able to perform the next-token prediction pretty well, too well, well enough that seeing these sentences once more wouldn’t make the LLM any stronger.</p>
 </section>
 <section id="high-quality-data">
 <h2><span class="section-number">4.2.4. </span>High-quality Data<a class="headerlink" href="#high-quality-data" title="Link to this heading">#</a></h2>
@@ -505,7 +505,7 @@ Hi! How was your weekend?<br></p>
 <p>For example, for music AI:</p>
 <blockquote>
 <div><p>Much of the time, the pianist isn’t improvising. Certainly Jamal must mix it up from night to night, but the general plan is always highly organized. On “No Greater Love” there’s a chorus and a half where Jamal seems to really “blow.” It’s not pure bebop, but a collection of tricks and tips, all done with astonishing rhythmic panache.
-His left hand pulses on the off beat, going straight into the engine room with the bass and drums. Jamal had been doing this for a while; it is one of the many details Miles Davis seems to have encouraged Red Garland to copy.</p>
+His left hand pulses on the offbeat, going straight into the engine room with the bass and drums. Jamal had been doing this for a while; it is one of the many details Miles Davis seems to have encouraged Red Garland to copy.</p>
 </div></blockquote>
 <p>(quote from <a class="reference external" href="https://iverson.substack.com/p/tt-240-ahmad-jamal-at-the-pershing">Ethan Iverson’s blog</a>)</p>
 <p>For a legal AI:</p>

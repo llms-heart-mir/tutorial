@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -467,30 +467,30 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;m instantiating a tokenizer for my LLMs&quot;</span>
 </pre></div>
 </div>
-<p>GPT-4 tokenizer split the text as follows:</p>
+<p>GPT-4 tokenizer splits the text as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">/</span> <span class="s1">&#39;m / instant / iating / a / tokenizer / for / my / L/ LM / s</span>
 </pre></div>
 </div>
-<p>Compare this to word-based tokenizers.</p>
+<p>Compare this to word-based tokenizers:</p>
 <ul class="simple">
 <li><p>Sub-words are smaller.</p>
 <ul>
-<li><p>It’s better to split <code class="docutils literal notranslate"><span class="pre">I</span></code> + <code class="docutils literal notranslate"><span class="pre">'m</span></code> because they’re smaller yet meaningful unit of text than <code class="docutils literal notranslate"><span class="pre">I'm</span></code>.</p></li>
-<li><p>Similarly, It’s better to split <code class="docutils literal notranslate"><span class="pre">instant</span></code> + <code class="docutils literal notranslate"><span class="pre">iating</span></code> because they’re smaller yet meaningful unit of text.</p></li>
+<li><p>It’s better to split <code class="docutils literal notranslate"><span class="pre">I</span></code> + <code class="docutils literal notranslate"><span class="pre">'m</span></code> because they’re smaller yet meaningful units of text than <code class="docutils literal notranslate"><span class="pre">I'm</span></code>.</p></li>
+<li><p>Similarly, it’s better to split <code class="docutils literal notranslate"><span class="pre">instant</span></code> + <code class="docutils literal notranslate"><span class="pre">iating</span></code> because they’re smaller yet meaningful units of text.</p></li>
 <li><p>Same, <code class="docutils literal notranslate"><span class="pre">L</span></code> + <code class="docutils literal notranslate"><span class="pre">LM</span></code> + <code class="docutils literal notranslate"><span class="pre">s</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">LLMs</span></code>.</p></li>
 </ul>
 </li>
-<li><p>Smaller units lead to <strong>smaller vocab size</strong>, hence better.</p></li>
+<li><p>Smaller units lead to a <strong>smaller vocab size</strong>, hence better.</p></li>
 </ul>
-<p>Indeed, GPT-4 uses their tokenizer named <code class="docutils literal notranslate"><span class="pre">cl100k_base</span></code>, whose vocab size is only 100k but can represent a lot of words than possibly a 1M-vocab word-based tokenizer.</p>
+<p>Indeed, GPT-4 uses their tokenizer named <code class="docutils literal notranslate"><span class="pre">cl100k_base</span></code>, whose vocab size is only 100k but can represent many more words than possibly a 1M-vocab word-based tokenizer.</p>
 <section id="training-sub-word-tokenizers">
 <h2><span class="section-number">3.2.1. </span>Training Sub-word Tokenizers<a class="headerlink" href="#training-sub-word-tokenizers" title="Link to this heading">#</a></h2>
-<p>is omitted in this book :p It’s called “Byte-Pair Encoding” tokenizers, go study yourself!</p>
+<p>This is omitted in this book :p It’s called “Byte-Pair Encoding” tokenizers, go study it yourself!</p>
 <p>My lazy summary:</p>
 <ul class="simple">
 <li><p>As in the example above, all the current LLMs use some kind of sub-word tokenizers.</p></li>
 <li><p>You need to train these sub-word tokenizers. It’s not too computationally heavy to train tokenizers.</p></li>
-<li><p>By also adopting the “byte fallback” property, out-of-vocabulary tokens are split into byte representation and passed to the LLMs.</p>
+<li><p>By also adopting the “byte fallback” property, out-of-vocabulary tokens are split into byte representations and passed to the LLMs.</p>
 <ul>
 <li><p>This remedy enables LLMs to also process multiple languages, although it makes the tokenized result too long for those non-primary languages.</p></li>
 </ul>
@@ -500,15 +500,15 @@ document.write(`
 <section id="pros">
 <h2><span class="section-number">3.2.2. </span>Pros<a class="headerlink" href="#pros" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Sub-words are more efficient and effective than words</p></li>
+<li><p>Sub-words are more efficient and effective than words.</p></li>
 </ul>
 </section>
 <section id="cons">
 <h2><span class="section-number">3.2.3. </span>Cons<a class="headerlink" href="#cons" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>It still simply maps from texts through token indices to embeddings. This blocks the language model to understand anything before the tokenization step.</p>
+<li><p>It still simply maps from texts through token indices to embeddings. This blocks the language model from understanding anything before the tokenization step.</p>
 <ul>
-<li><p>For example, the model has little visibility to spellings of text. To be discussed later in this tutorial.</p></li>
+<li><p>For example, the model has little visibility into the spellings of text. To be discussed later in this tutorial.</p></li>
 </ul>
 </li>
 </ul>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -210,7 +210,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch04_properties/sec00-intro.html">4. Pre-Training, and the Induced Properties</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec01-training-objective.html">4.1. Next-Token Prediction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ch04_properties/sec02-llm-is-what-it-read.html">4.2. A LLM is What It Reads</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ch05_finetuning/sec00-intro.html">5. Finetuning</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -507,7 +507,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>There are other ways for using self-attention layers. However, the recent LLMs are all alike. They are also called <em>decode-only transformers</em>.</p>
+<p>There are other ways for using self-attention layers. However, the recent LLMs are all alike; They are also called <em>decode-only transformers</em>.</p>
 <section id="token-embedding">
 <h2><span class="section-number">2.1.1. </span>Token embedding<a class="headerlink" href="#token-embedding" title="Link to this heading">#</a></h2>
 <p>It is a simple embedding layer, i.e., a trainable look-up table mapping <code class="docutils literal notranslate"><span class="pre">token_index</span></code> –&gt; <code class="docutils literal notranslate"><span class="pre">token_embedding</span></code>.</p>
@@ -515,7 +515,7 @@ document.write(`
 <section id="self-attention">
 <h2><span class="section-number">2.1.2. </span>Self-attention<a class="headerlink" href="#self-attention" title="Link to this heading">#</a></h2>
 <p>The strength of the Transformer comes from its unique self-attention mechanism.
-Since I’m not better than Andrej Karpathy at teaching, I’ll send you to <a class="reference external" href="https://youtu.be/kCc8FmEb1nY?si=cBCRZAp5BWg5wirN&amp;amp;t=2535">his lecture video on GPT, 42:15</a>.</p>
+Since I’m not better than Andrej Karpathy at teaching, I’ll send you to <a class="reference external" href="https://youtu.be/kCc8FmEb1nY?si=cBCRZAp5BWg5wirN&amp;amp;t=2535">his lecture video on GPT, 42:15</a> for more details.</p>
 <p>Here’s my very lossy tl;dr:</p>
 <ul class="simple">
 <li><p>A self-attention layer maps a sequence of vector to another sequence of vector.</p>
