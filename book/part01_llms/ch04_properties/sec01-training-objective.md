@@ -7,9 +7,9 @@ Earlier in this book, we learned BERTs are trained with masked token prediction.
 ![bert](../../imgs/figs/part01/bert-training.png)
 ([image credit](https://www.turing.com/kb/how-bert-nlp-optimization-model-works))
 
-Training LLMs is quite different. Pretty much all the current LLMs are trained with "**next-token prediction**". This is related to why we call LLMs "*decoder-only transformers*"; also to "auto-regressive models". 
+Training LLMs is quite different. Pretty much all the current LLMs are trained with "**next-token prediction**". This is related to why we call LLMs "*decoder-only transformers*", or "auto-regressive models". 
 
-Let's say one of our training document has this token sequence:
+Let's say one of our training documents has this token sequence:
 
 ```
 I / 'm / instant / iating / a / tokenizer / for / my / L/ LM / s
@@ -22,7 +22,7 @@ The next-token prediction is literally to predict the next token, based on the g
 ```
 
 In fact, it only shows a slice of the training. 
-Usually, the prediction, loss calculation, and backpropagation is configured so that in a single batch at a step, once we have a sequence as a training item length of $N + 1$, we perform this to every token except the first one.
+Usually, the prediction, loss calculation, and backpropagation are configured so that in a single batch at a step, once we have a sequence as a training item length of $N + 1$, we perform this to every token except the first one.
 (This is also called "teacher forcing" autoregressive training.)
 
 ```

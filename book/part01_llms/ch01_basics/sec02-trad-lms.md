@@ -20,16 +20,16 @@ How about [named entity recognition](https://paperswithcode.com/datasets?task=na
 - CoNLL (2003): 22,137 sentences
 - Few-NERD (2021): 118,200 sentences
 
-It's all relatively, but these are very small (and specific) compared to the training data for LLMs.
+These are very small (and task-specific) compared to the training data for LLMs.
 
 ## Models
 
-For classification, a deep learning models with a classification head used to have under or above a million parameters. Or - 0.001B parameters. 
+For classification, deep learning models with a classification head used to have under or over a million parameters. In other words, around 0.001B parameters. 
 
 Models for named entity recognition were not too different.
 
-An exception is machine translation, where things were - could be, and had to be - much larger. Until very recently though (before 2020), the models were still definitely under 1B.
+An exception was machine translation, where things were - could be, and had to be - much larger. Until very recently though (before 2020), the models were still definitely under 1B.
 
-More importantly, before LLMs (also before BERTs; which will be covered in the next section,) all the models were specialized for a specific task. 
-This means everything is scattered; models, datasets, etc.. You have one model for one task. You need many models for many tasks. 
-And that was just natural, as they should be.
+More importantly, before LLMs (also before BERTs, which will be covered in the next section), all the models were specialized for a specific task. 
+This meant everything was scattered; models, datasets, etc. You had one model for one task. You needed many models for many tasks. 
+And that was just natural, as it should be.

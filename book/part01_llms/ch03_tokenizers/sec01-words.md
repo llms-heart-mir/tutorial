@@ -36,31 +36,30 @@ Note that we didn't train this tokenizer. We didn't train any tokenizer because 
 | nn.Linear -> nn.Softmax (lm_head) | (batch, sequence, emb_dim)                 | (batch, sequence, n_token=50_000)     |
 
 
-The problem is, in the real use-cases, a language model would need to process other sentences consists of other words, too. This means, to perfectly represent every word in the embedding layer, we need a very large embedding layers. 
+The problem is, in real use-cases, a language model would need to process sentences consisting of words other than those in the training data. This means, to perfectly represent every word in the embedding layer, we need a very large embedding layer.
 
-Well, How many?
+Well, how large?
 
-Let's say our target corpus is Wikipedia. According to [this repo](https://github.com/IlyaSemenov/wikipedia-word-frequency):
+Let's say our target corpus is Wikipedia. According to [this repository](https://github.com/IlyaSemenov/wikipedia-word-frequency):
 
 > Total unique words appearing at least in 3 articles: 2747823
 
-There are whooping unique 2.7M words in English only, as of 2022. 
+There are a whopping 2.7M unique words in English only, as of 2022.
 
 ## Pros
 
-- Different words convey different meanings. So it makes sense to treat it as a minimum unit.
-- Perhaps not too different from how humans process natural languages.. perhaps. 
+- Different words convey different meanings. So it makes sense to treat them as the minimum unit.
+- Perhaps not too different from how humans process natural languages... perhaps.
 - Zero effort to train the tokenizer.
 
 ## Cons
 
 - Huge vocabulary size leads to increased model complexity and memory requirements.
-  - 3M vocab x 4096 dim = over 12B parameters = over 49GB if float32 is used. This embedding layer is already too big for most of the GPUs! 
+  - 3M vocab x 4096 dim = over 12B parameters = over 49GB if float32 is used. This embedding layer is already too big for most GPUs!
 - Inability to handle out-of-vocabulary (OOV) words, which are common in real-world text data.
-  - Due to the memory issue, it's common to use most popular words under 1M or so. This means, due to the long tail distribution of words, OOV would occur often. 
+  - Due to the memory issue, it's common to use the most popular words under 1M or so. This means, due to the long-tailed distribution of words, OOV would occur often.
 - Lack of subword information, which can be useful for understanding morphological patterns and handling rare or unseen words.
-  - E.g., it'd be better if `instantiating` can be split into `instantiat-` + `-ing`. Perhaps `LLMs` into `LLM` + `s`. `permutation` into `permute` + `-ate` + `-tion` or something. Something like that!  
+  - E.g., it'd be better if `instantiating` can be split into `instantiat-` + `-ing`. Perhaps `LLMs` into `LLM` + `s`. `permutation` into `permute` + `-ate` + `-tion` or something similar.
 - Difficulty in handling misspellings, slang, or other non-standard language elements.
 
-
-These are why researchers came up with a better way: Sub-word tokenizers. 
+These are why researchers came up with a better way: Sub-word tokenizers.
